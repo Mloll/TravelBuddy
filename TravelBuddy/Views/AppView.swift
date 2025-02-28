@@ -10,7 +10,7 @@ import SwiftData
 
 struct AppView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    
 
     var body: some View {
         NavigationSplitView {
@@ -25,5 +25,5 @@ struct AppView: View {
 
 #Preview {
     AppView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: TravelBuddyVersionedSchema.models, inMemory: true)
 }

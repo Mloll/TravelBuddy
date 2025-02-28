@@ -1,10 +1,12 @@
 import SwiftUI
-
+import SwiftData
 
 struct OutlineView : View {
+    @Query var folders : [Folder]
     
     var body: some View {
-        return Text("Outlineview")
+        
+        return Text("\(folders.count)")
     }
     
 }
