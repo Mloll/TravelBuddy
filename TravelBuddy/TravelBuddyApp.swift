@@ -13,7 +13,7 @@ import UniformTypeIdentifiers
 struct TravelBuddyApp: App {
     var body: some Scene {
         DocumentGroup(editing: .itemDocument, migrationPlan: TravelBuddyMigrationPlan.self) {
-            ContentView()
+            AppView()
         }
     }
 }
