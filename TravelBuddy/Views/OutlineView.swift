@@ -2,11 +2,22 @@ import SwiftUI
 import SwiftData
 
 struct OutlineView : View {
-    @Query var folders : [Folder]
+    @Environment(\.modelContext) private var modelContext
+    @Query var trips : [Trip]
     
     var body: some View {
-        
-        return Text("\(folders.count)")
+        List {
+            ForEach(trips) { trip in
+                Section(trip.name) {
+                    Text("Trip content")
+                }
+            }
+        }.contextMenu {
+            Button("New Trip") {
+                print("Make a new trip")
+                modelContext.insert(Trip(name: "New Trip"))
+            }
+        }
     }
     
 }

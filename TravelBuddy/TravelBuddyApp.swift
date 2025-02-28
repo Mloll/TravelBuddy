@@ -38,6 +38,7 @@ struct TravelBuddyVersionedSchema: VersionedSchema {
     static var versionIdentifier = Schema.Version(1, 0, 0)
 
     static var models: [any PersistentModel.Type] = [
+        Trip.self,
         Folder.self,
         Marker.self,
     ]
