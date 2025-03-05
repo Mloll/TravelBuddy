@@ -25,5 +25,5 @@ struct AppView: View {
 
 #Preview {
     AppView()
-        .modelContainer(for: TravelBuddyVersionedSchema.models, inMemory: true)
+        .modelContainer(Preview.modelContainer)
 }

@@ -10,16 +10,19 @@ import SwiftData
 
 @Model
 final class Folder {
-    var folderName : String
+    var name : String
+    
+    var parentTrip : Trip?
     var parentFolder : Folder?
     @Relationship(deleteRule: .cascade, inverse: \Folder.parentFolder)
-    var subFolder = [Folder] ()
+    var subFolder: [Folder]? = nil 
     @Relationship(deleteRule: .cascade, inverse: \Marker.folder)
     var markers = [Marker] ()
     
     
-    init(folderName: String) {
-        self.folderName = folderName
+    init(name: String, trip: Trip) {
+        self.name = name
+        self.parentTrip = trip
     }
     
 }

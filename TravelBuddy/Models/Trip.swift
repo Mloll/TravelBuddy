@@ -12,7 +12,7 @@ import SwiftData
 final class Trip {
     var name : String
     
-    @Relationship(deleteRule: .cascade, inverse: \Folder.parentFolder)
+    @Relationship(deleteRule: .cascade, inverse: \Folder.parentTrip)
     var folders = [Folder] ()
     
     @Relationship(deleteRule: .cascade, inverse: \Marker.trip)

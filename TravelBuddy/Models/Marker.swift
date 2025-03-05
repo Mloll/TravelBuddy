@@ -3,12 +3,12 @@ import SwiftData
 
 @Model
 final class Marker {
-    var markerName : String
+    var name : String
     var folder : Folder?
     var trip : Trip?
     
-    init(markerName: String) {
-        self.markerName = markerName
+    init(name: String) {
+        self.name = name
     }
     
 }
